@@ -1,5 +1,5 @@
 The github link for the project
-https://github.com/keneboy/tutoringapp.git
+https://github.com/keneboy/tutoringapp
 
  <!-- 
  The Heroku link will be provided  -->
