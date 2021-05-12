@@ -19,6 +19,9 @@ connectDb();
 
 //mediaware and exported route
 app.use("/api/bootcamps", bootcamp);
+app.get("/", (req, res) => {
+  res.json({ name: "sam", level: "intermediate" });
+});
 
 const port = process.env.PORT || PORT;
 
