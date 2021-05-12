@@ -28,6 +28,7 @@ exports.deleteBootcamp = async (req, res) => {
     const bootcamp = await Bootcamp.findByIdAndDelete(req.params.id);
     if (!bootcamp)
       return res.status(404).send(`id not found with given ${req.params.id}`);
+    res.json({ success: true, data: `data deleted successfully` });
   } catch (err) {
     res.status(400).send({ success: false, Error: err.message });
   }
