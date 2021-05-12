@@ -1,5 +1,5 @@
 const express = require("express");
-const connectDb = require("./config/db");
+const connectDb = require("./utils/db");
 const bootcamp = require("./route/bootcamp");
 //initializing the express function
 const app = express();
