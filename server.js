@@ -1,9 +1,9 @@
 const express = require("express");
 const connectDb = require("./utils/db");
 const bootcamp = require("./route/bootcamp");
+const dotenv = require("dotenv");
 //initializing the express function
 const app = express();
-const dotenv = require("dotenv");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -20,7 +20,11 @@ connectDb();
 //mediaware and exported route
 app.use("/api/bootcamps", bootcamp);
 app.get("/", (req, res) => {
-  res.json({ name: "sam", level: "intermediate" });
+  res.json({
+    name: "sam",
+    message:
+      "please go through the readme file for the various end point as instructed thank you",
+  });
 });
 
 const port = process.env.PORT || PORT;
