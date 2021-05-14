@@ -4,7 +4,9 @@ const validateBootcamp = require("../utils/validate");
 exports.getBootcamp = async (req, res) => {
   try {
     const bootcamp = await Bootcamp.findById(req.params.id);
+    //destruturing the bootcamp
     const { email, name, country } = bootcamp;
+
     if (!bootcamp)
       return res
         .status(400)
@@ -23,6 +25,7 @@ exports.getBootcamps = async (req, res) => {
     res.send(`Error:${err.message}`);
   }
 };
+//delete a single data
 exports.deleteBootcamp = async (req, res) => {
   try {
     const bootcamp = await Bootcamp.findByIdAndDelete(req.params.id);
@@ -33,6 +36,8 @@ exports.deleteBootcamp = async (req, res) => {
     res.status(400).send({ message: "unsuccessful", Error: err.message });
   }
 };
+
+//update data using the query first approach
 exports.updateBootcamp = async (req, res) => {
   //query first approach
   try {
@@ -50,9 +55,12 @@ exports.updateBootcamp = async (req, res) => {
     res.status(400).send({ message: "unsuccessful", Error: err.message });
   }
 };
+//create a singe data using the post method
 exports.createBootcamp = async (req, res) => {
   try {
+    //check if the request meet the defined parameters set with the joi validation
     const { error } = validateBootcamp(req.body);
+    //at this point it will throw the error to client if the field is incorrect
     if (error) {
       return res.status(404).send(error.details[0].message);
     }
