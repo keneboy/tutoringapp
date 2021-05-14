@@ -60,6 +60,6 @@ exports.createBootcamp = async (req, res) => {
     bootcamp = await bootcamp.save();
     res.json({ message: "successful", data: bootcamp });
   } catch (err) {
-    res.status(400).send({ message: "successful", Error: err.message });
+    res.status(400).send({ message: "unsuccessful", Error: err.message });
   }
 };
