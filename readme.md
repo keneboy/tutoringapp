@@ -34,3 +34,4 @@ https://stormy-castle-29498.herokuapp.com/api/bootcamps
 <!-- THE UTILS FOLDER -->
 
 this folder hold one of the third party package used for validation which was exported to the bootcamp.js file within the controller folder..
+the configuration of the database was included in the utils folder
