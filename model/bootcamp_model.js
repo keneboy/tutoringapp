@@ -15,7 +15,7 @@ const bootcampSchema = new mongoose.Schema({
   country: {
     type: String,
     required: true,
-    match: /[a-zA-Z]{3,}/,
+    match: /[a-zA-Z]{4,}/,
   },
 });
 
