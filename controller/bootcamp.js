@@ -64,7 +64,14 @@ exports.createBootcamp = async (req, res) => {
     if (error) {
       return res.status(404).send(error.details[0].message);
     }
-    let bootcamp = await new Bootcamp(req.body);
+    //destructure the req.body
+    const { email } = req.body;
+    //check if email already exist on database
+    let bootcamp = await Bootcamp.findOne({ email });
+    if (bootcamp) res.status(401).send(`email alreay exist`);
+
+    //create the data and save on database...
+    bootcamp = await Bootcamp.create(req.body);
     bootcamp = await bootcamp.save();
     res.json({ message: "successful", data: bootcamp });
   } catch (err) {
