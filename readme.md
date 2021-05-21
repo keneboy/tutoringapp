@@ -35,3 +35,8 @@ https://stormy-castle-29498.herokuapp.com/api/bootcamps
 
 this folder hold one of the third party package used for validation which was exported to the bootcamp.js file within the controller folder..
 the configuration of the database was included in the utils folder
+
+//catching others exception within the route
+instead of using the try and catch approach to handle exception i install an express package
+to handle it express-async-errors and require it at the top of the server.js
+and create an error.js(this is found within the middleware function) middleware that will throw the error
